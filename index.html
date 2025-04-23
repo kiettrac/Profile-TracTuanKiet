@@ -3,36 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông tin cá nhân - Trác Tuấn Kiệt</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Không cần link Font Awesome nữa -->
+    <title>Trác Tuấn Kiệt - Thông Tin Cá Nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #ffffff; /* Thay đổi background từ gradient sang màu trắng */
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .header {
+            padding: 40px 30px;
+            text-align: center;
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+            color: white;
+        }
+
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .info-icon {
+            width: 30px;
+            margin-right: 15px;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+            display: block;
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 576px) {
+            .profile-card {
+                margin: 0 10px;
+            }
+            
+            .avatar-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .info-item {
+                padding: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <div class="profile-card">
-        <!-- Sử dụng avatar.jpg -->
-        <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar">
-        <h1>Trác Tuấn Kiệt</h1>
-
-        <div class="contact-info">
-            <p>
-                <!-- Sử dụng icon email dạng text hoặc tìm ảnh icon email nếu muốn -->
-                📧 <a href="mailto:Kiettrac9@gmail.com">Kiettrac9@gmail.com</a>
-            </p>
+        <div class="header">
+            <div class="avatar-container">
+                <img src="avatar.jpg" alt="Trác Tuấn Kiệt" class="avatar">
+            </div>
+            <h1 class="name">Trác Tuấn Kiệt</h1>
         </div>
-
-        <div class="social-links">
-            <!-- Link Zalo với ảnh Zalo.png -->
-            <a href="zalo://ti/p/796901913" target="_blank" title="Mở Zalo">
-                <img src="Zalo.png" alt="Zalo" class="social-icon zalo-icon">
-            </a>
-            <!-- Link Facebook với ảnh Facebook.png -->
-            <a href="http://facebook.com/TracTuanKiet" target="_blank" title="Mở Facebook">
-                <img src="Facebook.png" alt="Facebook" class="social-icon facebook-icon">
-            </a>
+        
+        <div class="content">
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">Kiettrac9@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <div class="info-text">
+                    <span class="info-label">Địa chỉ</span>
+                    <span class="info-value">Châu Thành, An Giang</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://zalo.me/0796901913" class="social-icon" target="_blank" title="Zalo">
+                    <img src="Zalo.png" alt="Zalo">
+                </a>
+                <a href="http://facebook.com/TracTuanKiet" class="social-icon" target="_blank" title="Facebook">
+                    <img src="Facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2025 Trác Tuấn Kiệt - Trang thông tin cá nhân
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hiệu ứng khi trang được tải
+            const profileCard = document.querySelector('.profile-card');
+            profileCard.style.opacity = '0';
+            profileCard.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                profileCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                profileCard.style.opacity = '1';
+                profileCard.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Hiệu ứng khi hover vào các phần tử
+            const infoItems = document.querySelectorAll('.info-item');
+            infoItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
