@@ -1,0 +1,128 @@
+/* Cài đặt cơ bản và font chữ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Khung thông tin cá nhân */
+.profile-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Ảnh đại diện - Đảm bảo hình tròn */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Quan trọng: Tạo hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo dù ảnh gốc không vuông */
+    margin-bottom: 20px;
+    border: 4px solid #eef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tên */
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Thông tin liên hệ */
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    display: flex; /* Canh icon và text */
+    align-items: center;
+    justify-content: center; /* Căn giữa */
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Kiểu cho icon emoji nếu dùng hoặc icon ảnh email */
+.contact-info p > *:first-child { /* Chọn emoji hoặc thẻ img đầu tiên */
+    margin-right: 8px;
+    font-size: 1.2em; /* Điều chỉnh kích thước nếu là emoji */
+    /* Nếu dùng ảnh icon email, có thể cần set width/height ở đây */
+}
+
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Liên kết mạng xã hội */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các icon */
+}
+
+.social-links a {
+    /* color: #333; */ /* Không cần màu cho thẻ a chứa ảnh */
+    text-decoration: none;
+    display: inline-block; /* Để áp dụng transition transform */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Thêm opacity transition */
+}
+
+.social-links a:hover {
+    transform: translateY(-3px); /* Hiệu ứng nhấc lên khi hover */
+    opacity: 0.8; /* Làm icon mờ đi chút khi hover */
+}
+
+/* Icon mạng xã hội (cho thẻ img) */
+.social-icon {
+    width: 40px;  /* Kích thước chung cho icon ảnh */
+    height: 40px; /* Kích thước chung cho icon ảnh */
+    vertical-align: middle; /* Căn giữa theo chiều dọc tốt hơn */
+}
+
+/* Không cần các quy tắc CSS riêng cho Font Awesome nữa */
+/* .fa-facebook-square { ... } */
+
+/* Bạn có thể giữ lại class .zalo-icon và .facebook-icon */
+/* nếu muốn thêm style riêng cho từng icon sau này */
+/* Ví dụ: */
+/*
+.zalo-icon:hover {
+    filter: brightness(1.1);
+}
+.facebook-icon:hover {
+     filter: contrast(1.2);
+}
+*/
